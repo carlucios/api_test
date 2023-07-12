@@ -6,9 +6,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_address")
+@Table(name = "tb_colaborador")
 @EqualsAndHashCode
-public class Address {
+public class Colaborador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,18 +16,14 @@ public class Address {
     private Long id;
     @Getter
     @Setter
-    @Column(columnDefinition = "TEXT")
-    private String street;
+    private String nome;
     @Getter
     @Setter
-    private String number;
+    private String cargo;
     @Getter
     @Setter
-    private String district;
+    private String imagem;
     @Getter
     @Setter
-    private String city;
-    @Getter
-    @Setter
-    private String estate;
+    private String time;
 }

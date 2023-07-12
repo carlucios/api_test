@@ -1,7 +1,7 @@
 package com.fiap.techchallenge.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fiap.techchallenge.entities.Address;
+import com.fiap.techchallenge.entities.Colaborador;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,36 +9,32 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDTO {
+public class ColaboradorDTO {
     @Getter
     private Long id;
     @JsonProperty
     @NotBlank(message = "Esse é um campo de preenchimento obrigatório")
-    private String street;
+    private String nome;
     @JsonProperty
     @NotBlank(message = "Esse é um campo de preenchimento obrigatório")
-    private String number;
+    private String cargo;
     @JsonProperty
     @NotBlank(message = "Esse é um campo de preenchimento obrigatório")
-    private String district;
+    private String imagem;
     @JsonProperty
     @NotBlank(message = "Esse é um campo de preenchimento obrigatório")
-    private String city;
-    @JsonProperty
-    @NotBlank(message = "Esse é um campo de preenchimento obrigatório")
-    private String estate;
+    private String time;
 
-    public AddressDTO(Address entity) {
+    public ColaboradorDTO(Colaborador entity) {
         this.id = entity.getId();
-        this.street = entity.getStreet();
-        this.number = entity.getNumber();
-        this.district = entity.getDistrict();
-        this.city = entity.getCity();
-        this.estate = entity.getEstate();
+        this.nome = entity.getNome();
+        this.cargo = entity.getCargo();
+        this.imagem = entity.getImagem();
+        this.time = entity.getTime();
     }
 
 
-    public Address mapToAddress() {
-        return new Address(id, street, number, district, city, estate);
+    public Colaborador mapToColaborador() {
+        return new Colaborador(id, nome, cargo, imagem, time);
     }
 }
